@@ -106,14 +106,14 @@ class Domain_Wall(mlg.multilayer):
 
     def __init__(self, layer_number, ne, U, beta, spin_orbit,g_perp, L, er, d_gate,
                  max_count, tol, mix, ng, nk_y, ke,seed_rho,
-                 domain_seed,seed_type, vx, vz, sx, sz, **kwargs):
+                 domain_seed, vx, vz, sx, sz, **kwargs):
 
         self.layer_number = int(layer_number)
         self.ne = ne * (a**2)
         self.U = U
         self.beta = beta
         self.spin_orbit = spin_orbit
-        self.g_perp=g_perp/a**2 #init of meV
+        self.g_perp=g_perp/a**2 #unit of meV
         self.L = int(L)
         self.er = er
         self.d_gate = d_gate / a
@@ -135,7 +135,6 @@ class Domain_Wall(mlg.multilayer):
         self.ke = ke / a
         self.seed_rho=seed_rho
         self.domain_seed = bool(domain_seed)
-        self.seed_type = int(seed_type)
         self.L2 = 2 * self.layer_number
         self.N = 4 * self.ng * self.L2
 
@@ -327,7 +326,7 @@ class Domain_Wall(mlg.multilayer):
                         np.eye(self.L2),
                         optimize=True).reshape(self.N, self.N)
         if self.domain_seed:
-            return valley_z + spin_z+ self.seed_type*(valley_x + spin_x)+(1-self.seed_type)*(spin_valley_x-spin_valley_y)+1e-1*(valley_x + spin_x)
+            return valley_z + spin_z+spin_valley_x-spin_valley_y+1e-1*(valley_x + spin_x)
         else:
             return (- self.vx * self.Vx - self.vz * self.Vz
                     - self.sx * self.Sx - self.sz * self.Sz)
