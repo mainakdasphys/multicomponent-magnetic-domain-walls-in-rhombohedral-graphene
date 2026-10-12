@@ -1,0 +1,9 @@
+# Dependencies for the supplied Hamiltonian/HF code and planned plotting.
+# Pin production-tested versions before a reproduction release.
+numpy
+scipy
+matplotlib
+torch
+psutil
+joblib
+h5py
