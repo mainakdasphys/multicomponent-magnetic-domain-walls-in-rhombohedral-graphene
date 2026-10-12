@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using this software."
+type: software
+title: "Multicomponent Magnetic Domain Walls in Rhombohedral Graphene"
+authors:
+  - family-names: Das
+    given-names: Mainak
+abstract: "Numerical code for SWMC multilayer graphene, periodic domain-wall Hartree-Fock, and CP3 continuum calculations."
+repository-code: "https://github.com/mainakdasphys/multicomponent-magnetic-domain-walls-in-rhombohedral-graphene"
+license: MIT
+keywords:
+  - rhombohedral graphene
+  - domain walls
+  - Hartree-Fock
+  - CP3
+preferred-citation:
+  type: article
+  title: "Multicomponent Magnetic Domain Walls in Rhombohedral Graphene"
+  authors:
+    - family-names: Das
+      given-names: Mainak
+    - family-names: Wei
+      given-names: Nemin
+    - family-names: Huang
+      given-names: Chunli
+  year: 2026
+  doi: "10.48550/arXiv.2608.26104"
+  url: "https://arxiv.org/abs/2608.26104"
+
+# Add the software version, release date, and Zenodo DOI after archiving a release.
